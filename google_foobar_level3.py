@@ -1,22 +1,3 @@
-# target = 0
-# sequence = []
-# start = 0
-# temp = 0
-# while temp<5:  
-#   sequence.append(temp)
-#   if temp==4:
-#     target+=1
-#     temp =target
-#     start =0 
-#     continue
-#     if target == 5:
-#       break    
-#   if start==temp:
-#     start+=1
-#     temp = 0    
-#     continue
-#   temp+=1
-  
 def nested_list_sequence_generator(parameter):
     target = 0
     sequence = []
@@ -28,9 +9,7 @@ def nested_list_sequence_generator(parameter):
             target+=1
             temp =target
             start =0 
-            continue
-            if target == parameter:
-                break    
+            continue                
         if start==temp:
             start+=1
             temp = 0    
@@ -38,4 +17,4 @@ def nested_list_sequence_generator(parameter):
         temp+=1
     return sequence
 
-print(nested_list_sequence_generator(6))
+print(nested_list_sequence_generator(4))
