@@ -1,9 +1,9 @@
-test_maze = [[0,1,1,0,0,0],
-             [0,0,0,0,1,1],
-             [0,1,1,1,1,0],
-             [0,1,1,1,1,0],
-             [0,1,1,1,1,0],
-             [0,1,1,1,1,0],
+test_maze = [[3,0,6,0,0,0],
+             [1,9,1,1,1,0],
+             [1,1,1,1,1,0],
+             [1,1,1,1,1,0],
+             [1,1,1,1,1,0],
+             [1,1,1,1,1,0],
             ]
 
 def maze_wrapper(maze):
@@ -17,5 +17,16 @@ def maze_wrapper(maze):
     maze.append(maze_border)
     return maze 
 
-for x in maze_wrapper(test_maze):
-    print(x)
+wrapped_maze = maze_wrapper(test_maze)
+
+#print adjacent nodes- above, right, below, left
+def show_adjacent(wrapped_maze, row_num, index_num):
+    row_num+=1
+    index_num+=1
+    print("Above: ", wrapped_maze[row_num-1][index_num])
+    print("Right: ", wrapped_maze[row_num][index_num+1])
+    print("Below: ", wrapped_maze[row_num+1][index_num])
+    print("Left: ", wrapped_maze[row_num][index_num-1])
+
+show_adjacent(wrapped_maze, 0, 1)
+    
