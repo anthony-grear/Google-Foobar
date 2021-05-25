@@ -29,4 +29,16 @@ def show_adjacent(wrapped_maze, row_num, index_num):
     print("Left: ", wrapped_maze[row_num][index_num-1])
 
 show_adjacent(wrapped_maze, 0, 1)
-    
+
+def get_adjacent(wrapped_maze, row_num, index_num):
+    row_num+=1
+    index_num+=1
+    above = wrapped_maze[row_num-1][index_num]
+    right = wrapped_maze[row_num][index_num+1]
+    below = wrapped_maze[row_num+1][index_num]
+    left = wrapped_maze[row_num][index_num-1]
+    return (above, right, below, left)
+
+print(get_adjacent(wrapped_maze, 0,1))
+
+
