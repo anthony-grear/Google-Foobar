@@ -1,20 +1,21 @@
-def nested_list_sequence_generator(parameter):
-    target = 0
-    sequence = []
-    start = 0
-    temp = 0
-    while temp<parameter:  
-        sequence.append(temp)
-        if temp==(parameter-1):
-            target+=1
-            temp =target
-            start =0 
-            continue                
-        if start==temp:
-            start+=1
-            temp = 0    
-            continue
-        temp+=1
-    return sequence
+test_maze = [[0,1,1,0,0,0],
+             [0,0,0,0,1,1],
+             [0,1,1,1,1,0],
+             [0,1,1,1,1,0],
+             [0,1,1,1,1,0],
+             [0,1,1,1,1,0],
+            ]
 
-print(nested_list_sequence_generator(4))
+def maze_wrapper(maze):
+    maze_dimension = len(maze[0])
+    maze_border = [-1]*(maze_dimension+1)
+    for maze_row in maze:
+        maze_row.insert(0,-1)
+        maze_row.append(-1)
+    
+    maze.insert(0,maze_border)
+    maze.append(maze_border)
+    return maze 
+
+for x in maze_wrapper(test_maze):
+    print(x)
