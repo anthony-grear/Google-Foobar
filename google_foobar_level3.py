@@ -1,9 +1,9 @@
-test_maze = [[3,0,6,0,0,0],
-             [1,9,1,1,1,0],
-             [1,1,1,1,1,0],
-             [1,1,1,1,1,0],
-             [1,1,1,1,1,0],
-             [1,1,1,1,1,0],
+test_maze = [[3,6,9,12,15,18],
+             [1,1,1,1,1,21],
+             [1,1,1,1,1,24],
+             [1,1,1,1,1,27],
+             [1,1,1,1,1,30],
+             [1,1,1,1,1,33],
             ]
 
 def maze_wrapper(maze):
@@ -41,4 +41,11 @@ def get_adjacent(wrapped_maze, row_num, index_num):
 
 print(get_adjacent(wrapped_maze, 0,1))
 
+def touch_all_nodes(wrapped_maze):
+    for row in wrapped_maze:
+        for node in row:
+            if node>1:
+                print(node)
+
+touch_all_nodes(wrapped_maze)
 
