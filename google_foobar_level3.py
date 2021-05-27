@@ -42,10 +42,17 @@ def get_adjacent(wrapped_maze, row_num, index_num):
 print(get_adjacent(wrapped_maze, 0,1))
 
 def touch_all_nodes(wrapped_maze):
+    count1, count2 = 0, 0
     for row in wrapped_maze:
         for node in row:
             if node>1:
                 print(node)
+                print(wrapped_maze[count1-1][count2])
+                print(wrapped_maze[count1][count2+1])
+                print(wrapped_maze[count1+1][count2])
+                print(wrapped_maze[count1][count2-1])
+        count2 +=1
+    count1 +=1
 
 touch_all_nodes(wrapped_maze)
 
